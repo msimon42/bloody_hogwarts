@@ -43,5 +43,8 @@ RSpec.describe 'When a user visits the course index', type: :feature do
 
     expect(page).to have_content(@course_1.students.count)
     expect(page).to have_content(@course_2.students.count)
+
+    expect(page).to have_content(@student_1.name)
+    expect(page).to have_content(@student_2.name)
   end
 end

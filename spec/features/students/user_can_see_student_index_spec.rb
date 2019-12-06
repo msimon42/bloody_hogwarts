@@ -1,5 +1,7 @@
 RSpec.describe 'When a user visits the student index page', type: :feature do
   before :each do
+
+
     @student_1 = Student.create(
       name: 'Nancy Higginbottom',
       age: 17,
@@ -24,6 +26,6 @@ RSpec.describe 'When a user visits the student index page', type: :feature do
     expect(page).to have_content(@student_2.age)
     expect(page).to have_content(@student_2.house)
 
-    expect(page).to have_content('17.5')
+    expect(page).to have_content(Student.average('age'))
   end
 end

@@ -9,7 +9,7 @@ RSpec.describe 'When a user visits the student index page', type: :feature do
 
     @student_2 = Student.create(
       name: 'Hoggeous Pebblestich',
-      age: 17,
+      age: 18,
       house: 'Hufflepuff'
     )
   end
@@ -23,5 +23,7 @@ RSpec.describe 'When a user visits the student index page', type: :feature do
     expect(page).to have_content(@student_2.name)
     expect(page).to have_content(@student_2.age)
     expect(page).to have_content(@student_2.house)
-  end   
+
+    expect(page).to have_content('17.5')
+  end
 end
